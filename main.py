@@ -41,8 +41,8 @@ while True:
                     add.send_keys(Keys.ENTER)
                     listname = ""
                     break
-            # enter the listname below and press enter every time you want to add new list
-            # 2 search list name
+        # enter the listname below and press enter every time you want to add new list
+        # 2 search list name
         if case == 2:
             while True:
                 listname = input("Enter list name to search: ")
@@ -60,20 +60,19 @@ while True:
                     add.send_keys(Keys.ENTER)
                     listname = ""
                     break
+        # Check the completed list
         if case == 3:
             while True:
                 listname = input("Enter the completed list name to mark it as completed: ")
                 driver.get("https://todo.scriveqa.com/")
                 time.sleep(0.5)
                 if len(listname) > 1:
-                    # check box the list that is completed
+                    # check the list that is completed
                     path = '//*[text()="' + listname + '"]'
                     plus = driver.find_element(By.XPATH, path)
                     plus.click()
                     listname = ""
                     break
-
-
     except:
         print("Please Enter correct details :")
         continue
